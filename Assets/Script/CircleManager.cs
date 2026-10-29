@@ -123,7 +123,9 @@ public class CircleManager : MonoBehaviour
     }
     public void TriggerBaseCircleAnimation(bool isGold)
     {
-        baseCircleTransform.DOKill();
+        baseCircleTransform.DOComplete(true);
+        baseCircleTransform.localScale = originalBaseCircleScale;
+
         baseCircleTransform.DOPunchScale(targetBaseCircleScale, animationDuration, 1, 0.1f);
         if (isGold)
             goldenParticleSystem.Play();

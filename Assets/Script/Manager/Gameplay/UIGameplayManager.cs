@@ -6,7 +6,7 @@ public class UIGameplayManager : MonoBehaviour
 {
     [Header("Point")]
     [SerializeField] private TMP_Text pointText;
-
+    private Vector2 originalPointScale;
     [Header("Shop")]
     [SerializeField] private GameObject shopPanel;
     [SerializeField] private GameObject buttonShop;
@@ -14,11 +14,6 @@ public class UIGameplayManager : MonoBehaviour
     [Header("Setting")]
     [SerializeField] private GameObject settingPanel;
     [SerializeField] private GameObject buttonSetting;
-
-    [Header("Windowed")]
-    [SerializeField] private Image iconImage;
-    [SerializeField] private Sprite checkSprite;
-    [SerializeField] private Sprite crossSprite;
 
     private void OnEnable()
     {
@@ -33,6 +28,7 @@ public class UIGameplayManager : MonoBehaviour
     }
     private void Start()
     {
+        originalPointScale = pointText.transform.localScale;
         UpdatePointUI();
     }
     private void UpdatePointUI()
@@ -42,7 +38,8 @@ public class UIGameplayManager : MonoBehaviour
 
     private void PointAddedAnimation()
     {
-        pointText.transform.DOKill();
+        pointText.transform.DOComplete(true);
+        pointText.transform.localScale = originalPointScale;
         pointText.transform.localScale = pointText.transform.localScale;
         pointText.transform.DOPunchScale(new Vector3(0.2f, 0.2f, 0f), 0.15f, 1, 0.1f);
     }
@@ -71,16 +68,5 @@ public class UIGameplayManager : MonoBehaviour
         buttonSetting.SetActive(!settingPanel.activeSelf);
         UIManager.instance.OnPanelCloseEvent -= CloseSetting;
     }
-    public void ToggleWindowed(bool windowed)
-    {
-        Screen.fullScreen = !windowed;
-        if (windowed)
-        {
-            iconImage.sprite = checkSprite;
-        }
-        else
-        {
-            iconImage.sprite = crossSprite;
-        }
-    }
+
 }
