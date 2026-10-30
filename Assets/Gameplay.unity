@@ -484,6 +484,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 208474898}
   m_CullTransparentMesh: 1
+--- !u!1 &222675256
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 222675258}
+  - component: {fileID: 222675257}
+  m_Layer: 0
+  m_Name: SaveManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &222675257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222675256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db10fc5d23894394395a4150c9893dc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SaveManager
+--- !u!4 &222675258
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222675256}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 956.16394, y: 630.4154, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &293183632
 GameObject:
   m_ObjectHideFlags: 0
@@ -4193,9 +4237,9 @@ MonoBehaviour:
   m_fontSize: 150
   m_fontSizeBase: 150
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 25
+  m_fontSizeMax: 150
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -5426,7 +5470,7 @@ MonoBehaviour:
           m_CallState: 2
     basePrice: 10
     priceMultiplier: 1.3
-    harsherMultiplier: 0
+    harsherMultiplier: 3
   - upgradeName: Speed Circle
     upgradeEvent:
       m_PersistentCalls:
@@ -5445,7 +5489,7 @@ MonoBehaviour:
           m_CallState: 2
     basePrice: 50
     priceMultiplier: 1.5
-    harsherMultiplier: 0
+    harsherMultiplier: 3
   - upgradeName: Golden Circle
     upgradeEvent:
       m_PersistentCalls:
@@ -5464,7 +5508,7 @@ MonoBehaviour:
           m_CallState: 2
     basePrice: 150
     priceMultiplier: 1.85
-    harsherMultiplier: 0
+    harsherMultiplier: 3.5
   - upgradeName: + Outline
     upgradeEvent:
       m_PersistentCalls:
@@ -5483,7 +5527,7 @@ MonoBehaviour:
           m_CallState: 2
     basePrice: 500
     priceMultiplier: 3
-    harsherMultiplier: 0
+    harsherMultiplier: 5
   - upgradeName: Global Multiplier
     upgradeEvent:
       m_PersistentCalls:
@@ -5502,7 +5546,7 @@ MonoBehaviour:
           m_CallState: 2
     basePrice: 1000
     priceMultiplier: 2.5
-    harsherMultiplier: 0
+    harsherMultiplier: 7
   upgradePrefab: {fileID: 6010110438605220459, guid: 895267e456e298440af3c2193c9d3cfd, type: 3}
   upgradeSpawner: {fileID: 658847538}
   <UpgradeNormalCirclePoint>k__BackingField: 0
@@ -5619,9 +5663,6 @@ MonoBehaviour:
   buttonShop: {fileID: 555478736}
   settingPanel: {fileID: 376791990}
   buttonSetting: {fileID: 1133922380}
-  iconImage: {fileID: 848190007}
-  checkSprite: {fileID: -3407272428554079910, guid: 93570a4f5beb6e04e9898bd3fc9fa5b5, type: 3}
-  crossSprite: {fileID: 1731363448615722492, guid: 93570a4f5beb6e04e9898bd3fc9fa5b5, type: 3}
 --- !u!1 &1579040878
 GameObject:
   m_ObjectHideFlags: 0
@@ -6953,3 +6994,4 @@ SceneRoots:
   - {fileID: 1552442944}
   - {fileID: 1948507971}
   - {fileID: 1579040880}
+  - {fileID: 222675258}

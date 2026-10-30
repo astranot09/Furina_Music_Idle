@@ -62,7 +62,7 @@ public class UpgradeManager : MonoBehaviour
     }
     public void UpgradeCircleSpeed()
     {
-        UpgradeNormalCirclePoint += 2;
+        UpgradeSpeed += 0.05f;
     }
     public void UpgradeGoldenCircle()
     {

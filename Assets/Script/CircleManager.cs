@@ -102,11 +102,13 @@ public class CircleManager : MonoBehaviour
     private float CalculationSpeedToDuration()
     {
         float x = duration/UpgradeManager.instance.UpgradeSpeed;
+        x = Mathf.Clamp(x, 0.1f, duration);
         return x;
     }
     private bool GoldenChance()
     {
         float goldenChance = baseGoldenCircleChance + UpgradeManager.instance.UpgradeGoldenCircleChance;
+        goldenChance = Mathf.Clamp(goldenChance, 0, 0.35f);
         return Random.value <= goldenChance;
     }
 

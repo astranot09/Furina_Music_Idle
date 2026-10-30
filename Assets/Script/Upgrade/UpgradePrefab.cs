@@ -32,7 +32,14 @@ public class UpgradePrefab : MonoBehaviour
     private void UpdateAfterUpgrade()
     {
         GameplayManager.instance.RemovePoint(currentPrice);
-        currentPrice = (int)(currentPrice * upgradeData.priceMultiplier);
+        if(level % 15 == 0)
+        {
+            currentPrice = (int)(currentPrice * upgradeData.harsherMultiplier);
+        }
+        else
+        {
+            currentPrice = (int)(currentPrice * upgradeData.priceMultiplier);
+        }
         UpdateUI();
     }
 
