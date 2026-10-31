@@ -953,6 +953,7 @@ GameObject:
   - component: {fileID: 376791991}
   - component: {fileID: 376791993}
   - component: {fileID: 376791992}
+  - component: {fileID: 376791994}
   m_Layer: 5
   m_Name: SettingPanel
   m_TagString: Untagged
@@ -1020,6 +1021,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 376791990}
   m_CullTransparentMesh: 1
+--- !u!225 &376791994
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 376791990}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &395494190
 GameObject:
   m_ObjectHideFlags: 0
@@ -5695,6 +5708,7 @@ MonoBehaviour:
   buttonShop: {fileID: 555478736}
   settingPanel: {fileID: 376791990}
   buttonSetting: {fileID: 1133922380}
+  animDuration: 0.3
 --- !u!1 &1579040878
 GameObject:
   m_ObjectHideFlags: 0
@@ -6896,6 +6910,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2088992986}
+  - component: {fileID: 2088992987}
   m_Layer: 5
   m_Name: UpgradePanel
   m_TagString: Untagged
@@ -6924,6 +6939,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &2088992987
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2088992985}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &2138602940
 GameObject:
   m_ObjectHideFlags: 0

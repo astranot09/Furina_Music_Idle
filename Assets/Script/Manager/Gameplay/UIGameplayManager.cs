@@ -15,6 +15,9 @@ public class UIGameplayManager : MonoBehaviour
     [SerializeField] private GameObject settingPanel;
     [SerializeField] private GameObject buttonSetting;
 
+    [Header("Animation")]
+    [SerializeField] private float animDuration = 0.3f;
+
     private void OnEnable()
     {
         GameplayManager.instance.OnPointChange += UpdatePointUI;
@@ -46,6 +49,7 @@ public class UIGameplayManager : MonoBehaviour
     public void OpenShop()
     {
         UIManager.instance.ChangeAllPanel(shopPanel);
+        PlayAnimationEntry(shopPanel);
         UIManager.instance.OnPanelCloseEvent += CloseShop;
         UpgradeManager.instance.UpgradeSetUp();
         buttonShop.SetActive(!shopPanel.activeSelf);
@@ -53,20 +57,40 @@ public class UIGameplayManager : MonoBehaviour
     public void CloseShop()
     {
         UIManager.instance.ClosePanel(shopPanel);
+        PlayAnimationExit(shopPanel);
         buttonShop.SetActive(!shopPanel.activeSelf);
         UIManager.instance.OnPanelCloseEvent -= CloseShop;
     }
     public void OpenSetting()
     {
         UIManager.instance.ChangeAllPanel(settingPanel);
+        PlayAnimationEntry(settingPanel);
         UIManager.instance.OnPanelCloseEvent += CloseSetting;
         buttonSetting.SetActive(!settingPanel.activeSelf);
     }
     public void CloseSetting()
     {
         UIManager.instance.ClosePanel(settingPanel);
+        PlayAnimationExit(settingPanel);
         buttonSetting.SetActive(!settingPanel.activeSelf);
         UIManager.instance.OnPanelCloseEvent -= CloseSetting;
     }
 
+
+    public void PlayAnimationEntry(GameObject g)
+    {
+        CanvasGroup x = g.GetComponent<CanvasGroup>();
+        x.DOKill();
+        x.alpha = 0f;
+
+        x.DOFade(1, animDuration);
+    }
+    public void PlayAnimationExit(GameObject g)
+    {
+        CanvasGroup x = g.GetComponent<CanvasGroup>();
+        x.DOKill();
+        x.alpha = 1f;
+
+        x.DOFade(0, animDuration);
+    }
 }
