@@ -77,6 +77,7 @@ public class ScreenManager : MonoBehaviour
     {
         isConfirmation = false;
         UIManager.instance.ClosePanel(confirmationPanel);
+        UIManager.instance.OnPanelCloseEvent -= CancelSceneChange;
     }
     public void CancelSceneChange()
     {
